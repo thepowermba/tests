@@ -33,7 +33,7 @@
 - We know that the actions performed in this app are not async. So we would like you to implement your own async logic. You can use setTimeouts, setIntervals, Promises, sagas, thunk etc.
 - Your design must be mobile first and reponsive.
 
-## 2. Add testing in above mentioned app using Jest and Enzyme/react-test-renderer.
+## 2. Add testing in above mentioned app using Jest and React Testing Library.
 
 >### To do:-
 - Add at least one test for each of your component and screen.
