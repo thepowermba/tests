@@ -1,54 +1,52 @@
-# Frontend Test
+# Backend Test
 
-## 1. Create a movies app. An app where you can create watchlist of your favorite movies with genre and whether you have watched that movie or not.
-
->### To do:-
-- Use redux to implement the handling of state.
-- Create an input where user can add the movie name they would like to watch.
-- Create another input where user can add movie genres as tags.
-- Each movie can have more than one genres.
-- When user presses enter on genre input, it should show those genres below the movie name input.
-- User can add the same genre more than once and press enter; but that genre shouldn't show it the list again.
-- Genres should be case insensitive. Use should not be able to add horror and Horror.
-- Create a submit button where user can click to submit there movie.
-- All the movies should show in a list where below the form with the following fields:-
-	1. Checkbox that shows if movie is watched or not.
-	2. Movie name.
-	3. Genres.
-	4. Delete button.
-- Watched/Checked movies should move down to the bottom of the list.
-- If user unchecks a movie it should move to its original place.
-- Add three radio buttons at the top of the list which say Horror, Romance, Comedy and a reset button.
-- All the radio buttons should be unchecked by default.
-- Selecting any of the radio buttons should show only the movies which are in that genre.
-- Clicking on the reset button should show original list.
-- Add an input above the list and below the radio buttons where user can search the movies based on their name.
-- Show a loader when adding a movie or deleting a movie or searching for a movie. The delay should be 3 seconds. 
-- If go to route like /genre=romance, it should redirect me to a new page which should show the loader for 3 seconds and then only movies which have that genre.
-
->### Extra points:-
-- Add an edit button in the movie list. Clicking on the button should turn the movie name into an input tag with the movie name in it and also show a save button. Which user can then edit and save.
-
->### Note:-
-- We know that the actions performed in this app are not async. So we would like you to implement your own async logic. You can use setTimeouts, setIntervals, Promises, sagas, thunk etc.
-- Your design must be mobile first and reponsive.
-
-## 2. Add testing in above mentioned app using Jest and React Testing Library.
+## Create a social banking app. Where you can transact with people who are your connection.
 
 >### To do:-
-- Add at least one test for each of your component and screen.
-- Each test should shallow render your component and must have at least two assertions about your component.
-- Make sure your assertions are relevant to the logic of application. For example:- buttons should have a click assertion which performs some function.
-- Add three negative tests of your choosing.
-- There should be at least one test which tests the async logic of the that component (We would like to see how you test async logic and handle mocks).
+- Create a route to create user:-
+    1. User will provide there first name, last name, age and bank balance.
+    2. You will create user in database will this information and create a 10 digit random account number.
+    3. Due to security reasons you will create a 14 digit user password which contains number, letters and special characters.
+- Users should only be able to make transactions or add connections only after login.
+- Users should be able to send and approve connection requests.
+- Except the create user and login route, all other routes should use authentication, use can use bearer tokens which are at most valid for 15 mins.
+- Users should have the ability to add connections using someone's bank account number.
+- User should be able to see the name, age and bank account number of all their connections in a list.
+- Users can remove a connection from their account. 
+- Users can send and receive money to accounts which are there connection. Each transaction should be in the database.
+- Bank makes 1% on each transaction below 1,000 and 0.5% every transasction above 1,000.
+- Users should be able to see there past transactions. 
+- Each transction should also be saved in a .csv file in the file system with following format.
+>    Sender,Receiver,Amount,TimeStamp<br />
+>    1903578765,3458907654,100,12-06-21 11:00:12AM<br />
+>    1903578765,3458907654,100,12-06-21 11:00:12AM<br />
 
-## Things to keep in mind:-
+- Bank admin should be able to see how much money bank has made from transactions through a separate route, but you can't store that information in an account. We would like you to use mongo's aggregation framework to calculate money made by the bank.
+- Make sure you handle all the edge cases and error scenarios for example:-
+    1. What should happen when the user has zero balance and user tries to send money.
+    2. User tries to send money which is greater than their bank balance.
+    3. User tries to send money to someone who is no longer has them as their connection.
+>#### Note: 
+> User Should only be able to send money when both users are each others connection, for example User A should have B as their connection and User B should have User A as their connection. One sided connection won't work.
+
+
+>## Extra points:-
+- Add an undo transaction functionality, when user sends someone money they should be able to reverse the transaction in the next minute. And the user who receives the money should only see it in their account after one minute.
+- During that one minute window of undo feature, the money should be logged in to a special account and then transfered back to the sender account or forwarded to the receiver account.
+- If user decides to undo the transaction, user's account should see send transaction and undo transaction in their transaction history.
+
+>## Things to keep in mind:-
+- Use node and express for APIs.
+- Use mongodb atlas as your database and mongoose as your ORM.
+- Use Postman to test your routes. We would use the same.
+- All API responses should be in JSON format.
 - Please lint and format your code.
-- Your code should be modular and re-usable.
-- When we run the code in development mode; make sure your code doesn't have warnings or errors in browser console.
+- You have full autonomy on creating the routes structure and design the database schema, we want to see what you can come up with on your own.
+- This test is used to test you Node, Express as well as MongoDB knowledge, so optimize you queries.
 - Code should be properly documented and easier to understand.
-- Style your buttons and inputs and tables using your own css and not any framework.
-- Your design must be mobile first and reponsive.
-- When you submit your code let us know which extra points features you have completed.
+- Code written in typescript is a plus point but it's not required.
+- You can create database in mongodb atlas, which is a free service and use environment variables to store secrets.
 - Please add your code on github and make commits so we can review the code.
+- Commit your code in the repo with the .env file.
+- Make sure when you share the repo with us the database is not completely empty, it should have at least 5 users and 20 transactions so we don't have to start from scratch to verify things.
 - Do not spend more than **one** day on this test, it's fine to not finish it. A few questions are going to came after the code review and that's the important part.
