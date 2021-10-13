@@ -1,6 +1,6 @@
 # Data Sciences Test
 
->### In TPMBA we consider "Finisher" to a student who has finished the master. In the email are attached two files, the first one called "UsuariosDF" which includes the list of all the students we have on the platform, and the second one called "FinishersDF", which is the same but filtering only by the users who are finishers. The explanation of the columns is as follows: 
+In TPMBA we consider "Finisher" to a student who has finished the master. In the email are attached two files, the first one called "UsuariosDF" which includes the list of all the students we have on the platform, and the second one called "FinishersDF", which is the same but filtering only by the users who are finishers. The explanation of the columns is as follows: 
 
 - **userstatuses.user** → Fictitious user identifier
 - **promotions.type** → Promotion in which the user participates
