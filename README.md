@@ -1,54 +1,30 @@
-# Frontend Test
+# Data Sciences Test
 
-## 1. Create a movies app. An app where you can create watchlist of your favorite movies with genre and whether you have watched that movie or not.
+>### In TPMBA we consider "Finisher" to a student who has finished the master. In the email are attached two files, the first one called "UsuariosDF" which includes the list of all the students we have on the platform, and the second one called "FinishersDF", which is the same but filtering only by the users who are finishers. The explanation of the columns is as follows: 
 
->### To do:-
-- Use redux to implement the handling of state.
-- Create an input where user can add the movie name they would like to watch.
-- Create another input where user can add movie genres as tags.
-- Each movie can have more than one genres.
-- When user presses enter on genre input, it should show those genres below the movie name input.
-- User can add the same genre more than once and press enter; but that genre shouldn't show it the list again.
-- Genres should be case insensitive. Use should not be able to add horror and Horror.
-- Create a submit button where user can click to submit there movie.
-- All the movies should show in a list where below the form with the following fields:-
-	1. Checkbox that shows if movie is watched or not.
-	2. Movie name.
-	3. Genres.
-	4. Delete button.
-- Watched/Checked movies should move down to the bottom of the list.
-- If user unchecks a movie it should move to its original place.
-- Add three radio buttons at the top of the list which say Horror, Romance, Comedy and a reset button.
-- All the radio buttons should be unchecked by default.
-- Selecting any of the radio buttons should show only the movies which are in that genre.
-- Clicking on the reset button should show original list.
-- Add an input above the list and below the radio buttons where user can search the movies based on their name.
-- Show a loader when adding a movie or deleting a movie or searching for a movie. The delay should be 3 seconds. 
-- If go to route like /genre=romance, it should redirect me to a new page which should show the loader for 3 seconds and then only movies which have that genre.
+- **userstatuses.user** → Fictitious user identifier
+- **promotions.type** → Promotion in which the user participates
+- **promotions.name** → Promotion Name
+- **promotions._id** → Fictitious promotion identifier
+- **promotions.startDate** → Promotion Starting Date
+- **promotions.monthsLeft** → Months the promotion lasts
+- **Country** → Country from which the program was purchased
+- **Program_price** → Money we have generated for each program sold
 
->### Extra points:-
-- Add an edit button in the movie list. Clicking on the button should turn the movie name into an input tag with the movie name in it and also show a save button. Which user can then edit and save.
 
->### Note:-
-- We know that the actions performed in this app are not async. So we would like you to implement your own async logic. You can use setTimeouts, setIntervals, Promises, sagas, thunk etc.
-- Your design must be mobile first and reponsive.
+Promotions have a limited duration. To calculate the end time of the promotion, you would have to take the start date "startDate" and add the remaining months to it. Therefore, a promotion that starts on the 1st of March of 2019, and lasts 13 months will end in April 2020. 
 
-## 2. Add testing in above mentioned app using Jest and React Testing Library.
+Taking these considerations into account, would you be able to answer these questions? For this exercise, it is necessary to attach both the result in a CSV file and the jupyter notebook used to solve it as the result. As a recommendation, make a first data analysis as some data transformations might be needed. 
 
->### To do:-
-- Add at least one test for each of your component and screen.
-- Each test should shallow render your component and must have at least two assertions about your component.
-- Make sure your assertions are relevant to the logic of application. For example:- buttons should have a click assertion which performs some function.
-- Add three negative tests of your choosing.
-- There should be at least one test which tests the async logic of the that component (We would like to see how you test async logic and handle mocks).
 
-## Things to keep in mind:-
-- Please lint and format your code.
-- Your code should be modular and re-usable.
-- When we run the code in development mode; make sure your code doesn't have warnings or errors in browser console.
-- Code should be properly documented and easier to understand.
-- Style your buttons and inputs and tables using your own css and not any framework.
-- Your design must be mobile first and reponsive.
-- When you submit your code let us know which extra points features you have completed.
-- Please add your code on github and make commits so we can review the code.
-- Do not spend more than **one** day on this test, it's fine to not finish it. A few questions are going to came after the code review and that's the important part.
+1) How many users are from Spain?
+
+2) Can we know the amount of money in dollars that we have invoiced? What is the average? In case there is no price in the program, we will take 499.99€ as the default value. Take also the “promotions.startDate” field as the purchase date of the program. To convert from Euros to Dollars, take a look at the "historico.csv" file, where the conversion rate since 2019 appears.  
+
+3) Can you make a chart showing how many finishers there are for each promotion? The promotion to which a student belongs is indicated by the "promotions.type" column. For example: 
+- Promotion: thepowermba → 9K finishers
+- Promotion: powerjob → 1K finishers
+…
+
+4) Can you send this data to a MongoDB database? 
+
