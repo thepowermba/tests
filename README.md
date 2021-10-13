@@ -9,14 +9,15 @@ The first generation pokemon database is provided in a MongoDB instance. These a
 
 Questions: 
 
-	1. You should provide for all the pokemon that have 1 or more evolutions the name, number and spawn time of the evolutions. Estimated time: 15-30 minutes. 
+1) You should provide for all the pokemon that have 1 or more evolutions the name, number and spawn time of the evolutions. Estimated time: 15-30 minutes. 
 
-	2. All first evolution pokemon that have an evolution with an avg spawn greater than 4 (the evolution should have the avg spawn greater than 4, not the initial pokemon), you need the name and number of each pokemon that meets the following requirements. Estimated time: 1-2h
+2) All first evolution pokemon that have an evolution with an avg spawn greater than 4 (the evolution should have the avg spawn greater than 4, not the initial pokemon), you need the name and number of each pokemon that meets the following requirements. Estimated time: 1-2h
 
 If you find a solution send the query for each question and its result, otherwise send the reasoning or the query in pseudocode.
 
+Connection URL:
 
-Connection URL: mongodb+srv://testUser:testUser123@cluster0.repty.mongodb.net/pokemonsample?retryWrites=true&w=majority
+	mongodb+srv://testUser:testUser123@cluster0.repty.mongodb.net/pokemonsample?retryWrites=true&w=majority
 
 Recommended tools: Robo 3T // Studio 3T
 
@@ -39,16 +40,16 @@ Promotions have a limited duration. To calculate the end time of the promotion, 
 Taking these considerations into account, would you be able to answer these questions? For this exercise, it is necessary to attach both the result in a CSV file and the jupyter notebook used to solve it as the result. As a recommendation, make a first data analysis as some data transformations might be needed. 
 
 
-	1. How many users are from Spain?  
+1) How many users are from Spain?  
   
-	2. Can we know the amount of money in dollars that we have invoiced? What is the average? In case there is no price in the program, we will take 499.99€ as the default value. Take also the “promotions.startDate” field as the purchase date of the program. To convert from Euros to Dollars, take a look at the "historico.csv" file, where the conversion rate since 2019 appears.  
+2) Can we know the amount of money in dollars that we have invoiced? What is the average? In case there is no price in the program, we will take 499.99€ as the default value. Take also the “promotions.startDate” field as the purchase date of the program. To convert from Euros to Dollars, take a look at the "historico.csv" file, where the conversion rate since 2019 appears.  
 
-	3. Can you make a chart showing how many finishers there are for each promotion? The promotion to which a student belongs is indicated by the "promotions.type" column. For example:
+3) Can you make a chart showing how many finishers there are for each promotion? The promotion to which a student belongs is indicated by the "promotions.type" column. For example:
   - Promotion: thepowermba → 9K finishers
   - Promotion: powerjob → 1K finishers
   - ...
 
 
-	4. Can you send this data to a MongoDB database? 
+4) Can you send this data to a MongoDB database? 
 
 
