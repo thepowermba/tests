@@ -51,4 +51,3 @@
 - Your design must be mobile first and reponsive.
 - When you submit your code let us know which extra points features you have completed.
 - Please add your code on github and make commits so we can review the code.
-- Do not spend more than **one** day on this test, it's fine to not finish it. A few questions are going to came after the code review and that's the important part.
